@@ -245,7 +245,7 @@ a {
 .ghost-button {
   border-radius: 0;
   border: 2px solid;
-  border-color: var(--border-dark) var(--border-light) var(--border-light) var(--border-dark);
+  border-color: var(--border-light) var(--border-dark) var(--border-dark) var(--border-light);
   padding: 0.45rem 0.9rem;
   font-family: var(--font-ibm-plex-mono), monospace;
   font-size: 0.74rem;
