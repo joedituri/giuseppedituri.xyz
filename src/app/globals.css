@@ -565,6 +565,110 @@ a {
   color: var(--accent);
 }
 
+/* ── Blog Post ────────────────────────────────────────────── */
+
+.blog-post {
+  margin-top: 1.4rem;
+}
+
+.blog-post-header {
+  border: 2px solid;
+  border-color: var(--border-light) var(--border-dark) var(--border-dark) var(--border-light);
+  border-left: 4px solid #0A246A;
+  background: #F1F1EC;
+  padding: clamp(1.2rem, 3vw, 2rem);
+  margin-bottom: 1.5rem;
+}
+
+.blog-post-title {
+  margin: 0.6rem 0 0;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.blog-post-excerpt {
+  margin: 0.65rem 0 0;
+  color: var(--text-muted);
+  line-height: 1.65;
+  max-width: 64ch;
+}
+
+.blog-content {
+  border: 2px solid;
+  border-color: var(--border-light) var(--border-dark) var(--border-dark) var(--border-light);
+  background: #F1F1EC;
+  padding: clamp(1.4rem, 4vw, 2.4rem);
+}
+
+.blog-content h1,
+.blog-content h2,
+.blog-content h3 {
+  margin: 1.8rem 0 0.7rem;
+  font-family: var(--font-ibm-plex-mono), monospace;
+  letter-spacing: 0.04em;
+}
+
+.blog-content h1 { font-size: 1.4rem; }
+.blog-content h2 { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.06em; }
+.blog-content h3 { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.06em; }
+
+.blog-content h2::before {
+  content: "## ";
+  color: var(--text-muted);
+}
+
+.blog-content p {
+  margin: 0.9rem 0 0;
+  color: var(--text-muted);
+  line-height: 1.78;
+  max-width: 70ch;
+}
+
+.blog-content strong {
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+.blog-content ul,
+.blog-content ol {
+  margin: 0.9rem 0 0;
+  padding-left: 1.4rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+.blog-content li {
+  margin-top: 0.3rem;
+}
+
+.blog-content code {
+  font-family: var(--font-ibm-plex-mono), monospace;
+  font-size: 0.82em;
+  background: #e4e0d8;
+  border: 1px solid #b0ab9f;
+  padding: 0.1em 0.35em;
+}
+
+.blog-content pre {
+  margin: 1rem 0 0;
+  background: #1a1a1a;
+  color: #e8e8e8;
+  padding: 1.2rem;
+  overflow-x: auto;
+  font-family: var(--font-ibm-plex-mono), monospace;
+  font-size: 0.82rem;
+  border: 2px solid;
+  border-color: #404040 #fff #fff #404040;
+}
+
+.blog-content pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+}
+
 /* ── Hire Me Page ─────────────────────────────────────────── */
 
 .hireme-titlebar {

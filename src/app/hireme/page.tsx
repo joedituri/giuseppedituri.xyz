@@ -53,18 +53,18 @@ const projects = [
     link: "/",
   },
   {
-    name: "Second Brain",
+    name: "Textbook X Change",
     description:
-      "Personal productivity system for task tracking, project planning, and daily notes. Built with React and a JSON data model — designed for speed and zero friction.",
-    tech: ["React", "TypeScript", "JSON"],
-    link: "/resume",
+      "Student peer marketplace for swapping, selling, and buying textbooks. ISBN autofill with pricing suggestions powered by web scraping, AWS S3 image storage, and containerized via Docker Compose.",
+    tech: ["Python", "Django", "PostgreSQL", "AWS S3", "Docker"],
+    link: "https://github.com/Navnedia/Textbook-X-Change",
   },
   {
-    name: "JARVIS System",
+    name: "My OpenClaw Journey",
     description:
-      "Ongoing personal AI agent build. Designing a modular AI assistant with automation-first workflows, telemetry logging, and multi-agent collaboration patterns.",
-    tech: ["AI Agents", "OpenClaw", "Automation"],
-    link: "/blog",
+      "From zero agent experience to multi-agent workflows — RAG pipelines, orchestrator-worker patterns, telemetry logging, and personal automation. Documented on the blog.",
+    tech: ["OpenClaw", "AI Agents", "RAG", "Automation"],
+    link: "/blog/openclaw-journey",
   },
 ];
 

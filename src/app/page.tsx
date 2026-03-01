@@ -21,18 +21,18 @@ const featuredProjects = [
     href: "/",
   },
   {
-    title: "Second Brain Task System",
+    title: "Textbook X Change",
     summary:
-      "Internal productivity app for planning, execution, and daily tracking across personal and project workflows.",
-    tech: ["React", "TypeScript", "JSON Data Model"],
-    href: "/resume",
+      "Student-focused peer marketplace for swapping, selling, and buying textbooks. ISBN autofill, pricing suggestions via web scraping, AWS S3 image storage, and Docker deployment.",
+    tech: ["Python", "Django", "PostgreSQL", "AWS S3", "Docker"],
+    href: "https://github.com/Navnedia/Textbook-X-Change",
   },
   {
-    title: "JARVIS Build Log",
+    title: "My OpenClaw Journey",
     summary:
-      "Ongoing documentation of building a personal AI agent system with automation-first workflows.",
-    tech: ["AI Agents", "Automation", "System Design"],
-    href: "/blog",
+      "How I went from zero AI agent experience to building multi-agent workflows — RAG pipelines, orchestrator-worker patterns, and personal automation.",
+    tech: ["OpenClaw", "AI Agents", "RAG", "Automation"],
+    href: "/blog/openclaw-journey",
   },
 ];
 
@@ -182,27 +182,23 @@ export default function Home() {
           <h2 className="section-heading">Who I Am</h2>
           <div className="bio-panel">
             <p>
-              Recent CS graduate from the Chicago suburbs, currently transitioning from
-              operations into full-time engineering. I don&apos;t just study AI — I build
-              with it: automation dashboards, personal AI assistants, and modular agent
-              workflows using platforms like OpenClaw and modern AI frameworks. My approach
-              combines engineering rigor with user-centric design; I build tools people
-              actually want to use.
+              Recent CS graduate from the Chicago suburbs transitioning from operations into
+              full-time engineering. I build automation dashboards, personal assistants, and
+              modular agent workflows using modern AI frameworks and platforms like OpenClaw.
+              My focus is on shipping tools that are reliable, usable, and built with clear
+              architecture.
             </p>
             <p>
-              My focus is the intersection of AI orchestration and practical data
-              integration. I&apos;ve implemented RAG architectures for context-aware
-              responses, designed multi-agent systems for reusability and scalability, and
-              built telemetry and observability tooling in my own projects. Whether it&apos;s
-              prompt engineering, data retrieval pipelines, or extending agent functionality
-              through custom actions, I prioritize modularity, security, and clean
-              architecture from the start.
+              I work at the intersection of orchestration and data integration. I&apos;ve
+              implemented retrieval-based systems for context-aware responses, designed
+              reusable multi-agent workflows, and built telemetry and observability into my
+              own projects. I care about modularity, security, and maintainability from the
+              start.
             </p>
             <p>
-              What sets me apart is relentless curiosity and the ability to adapt fast.
-              I&apos;m not waiting for the future — I&apos;m building it now. I stay current
-              through hands-on experimentation and thrive in collaborative environments
-              where I can contribute from day one while continuing to grow.
+              I learn by building. I move quickly, adapt fast, and value direct
+              collaboration. I&apos;m looking to contribute immediately while continuing to
+              sharpen my engineering skills.
             </p>
           </div>
         </section>
@@ -218,9 +214,10 @@ export default function Home() {
             clear architecture and tight feedback loops.
           </p>
           <div className="work-grid">
-            {featuredProjects.map((project, index) => (
-              <CardReveal key={project.title} delay={index * 120}>
-                <Link href={project.href} className="project-card">
+            {featuredProjects.map((project, index) => {
+              const isExternal = project.href.startsWith("http");
+              const cardContent = (
+                <>
                   <p className="panel-label">Project 0{index + 1}</p>
                   <h3 className="mt-3 text-xl leading-tight">{project.title}</h3>
                   <p className="mt-3">{project.summary}</p>
@@ -233,9 +230,22 @@ export default function Home() {
                     Explore
                     <ArrowUpRight size={14} />
                   </p>
-                </Link>
-              </CardReveal>
-            ))}
+                </>
+              );
+              return (
+                <CardReveal key={project.title} delay={index * 120}>
+                  {isExternal ? (
+                    <a href={project.href} target="_blank" rel="noopener noreferrer" className="project-card">
+                      {cardContent}
+                    </a>
+                  ) : (
+                    <Link href={project.href} className="project-card">
+                      {cardContent}
+                    </Link>
+                  )}
+                </CardReveal>
+              );
+            })}
           </div>
         </section>
       </SectionReveal>

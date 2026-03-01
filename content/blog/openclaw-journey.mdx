@@ -1,0 +1,49 @@
+---
+title: "My OpenClaw Journey: Building AI Agents from Scratch"
+date: "2026-03-01"
+excerpt: "How I went from zero AI agent experience to building multi-agent workflows using OpenClaw — and what I learned along the way."
+---
+
+# My OpenClaw Journey: Building AI Agents from Scratch
+
+I've always been drawn to the idea of systems that work for you — not just tools you have to operate, but things that actually think, respond, and act. That's what got me into AI agents. And OpenClaw is what made them real for me.
+
+## Where I Started
+
+When I first started looking into AI agents, most of what I found was either too abstract (research papers) or too surface-level (just calling the OpenAI API and calling it an "agent"). Neither of those felt like building something real.
+
+I wanted to understand the actual mechanics — how you design a system that can reason, retrieve context, decide on actions, and hand off work to other agents. OpenClaw gave me that.
+
+## Getting My Hands Dirty
+
+The first thing I built was simple: a single agent that could answer questions about a set of documents using a basic RAG (Retrieval-Augmented Generation) setup. You give it a question, it retrieves the most relevant chunks from a vector store, and passes them as context to the LLM. Straightforward in theory, messier in practice.
+
+What I ran into early was the context window problem. Naive retrieval pulls too much irrelevant text, and the model starts hallucinating or ignoring the useful parts. I spent a lot of time tuning chunking strategies and reranking results before responses actually felt reliable.
+
+That process taught me something important: **prompt engineering and data retrieval are not separate concerns.** The way you structure your prompts has to match how your data is chunked and retrieved. They're one system.
+
+## Moving to Multi-Agent
+
+Once the single-agent setup was solid, I pushed into multi-agent territory. This is where OpenClaw really started to shine for me.
+
+The pattern I settled on was an orchestrator-worker setup. One agent handles routing and intent — it figures out what the user actually wants — and then delegates to specialized sub-agents that handle specific tasks. The orchestrator doesn't need to know *how* to do things, just *who* to ask.
+
+This maps well to real-world problems. When I was designing a personal automation system (what I call JARVIS), I had an agent for calendar awareness, one for task prioritization, and one for summarization. The orchestrator ties them together. Adding a new capability means building a new worker, not rewriting the core.
+
+## What I'd Tell Someone Starting Out
+
+A few things I wish I'd known:
+
+**Start with observability.** Before your agent does anything useful, add logging. You need to see what's being retrieved, what prompts are being sent, and what decisions are being made. Without it you're flying blind.
+
+**Modularity is not optional.** If your agents are tightly coupled, you'll spend more time debugging interactions than building features. Each agent should have a clear, narrow responsibility.
+
+**Failure modes matter more than happy paths.** Design for what happens when retrieval returns garbage, when an agent times out, or when the LLM returns something unexpected. Agents that fail gracefully are agents you can trust.
+
+## What's Next
+
+I'm continuing to build out the JARVIS system — expanding the agent graph, adding telemetry dashboards to track performance over time, and experimenting with memory patterns so agents can maintain context across sessions.
+
+I'm also looking at how these patterns apply to enterprise use cases, specifically around M365 and Copilot Studio — where the same principles of modularity, context-awareness, and governance matter even more.
+
+If you're building with OpenClaw or thinking about getting started, feel free to reach out. I'm always up to compare notes.
