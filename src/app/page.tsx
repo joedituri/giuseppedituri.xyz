@@ -21,33 +21,33 @@ const featuredProjects = [
     href: "/",
   },
   {
-    title: "Textbook X Change",
+    title: "TextbookXChange",
     summary:
-      "Student-focused peer marketplace for swapping, selling, and buying textbooks. ISBN autofill, pricing suggestions via web scraping, AWS S3 image storage, and Docker deployment.",
+      "Student-focused marketplace to swap, sell, or buy textbooks directly from peers. Built backend for a price comparison tool integrating external data, CI/CD collaboration via Git, and security best practices throughout.",
     tech: ["Python", "Django", "PostgreSQL", "AWS S3", "Docker"],
     href: "https://github.com/Navnedia/Textbook-X-Change",
   },
   {
-    title: "My OpenClaw Journey",
+    title: "OpenClaw",
     summary:
-      "How I went from zero AI agent experience to building multi-agent workflows — RAG pipelines, orchestrator-worker patterns, and personal automation.",
-    tech: ["OpenClaw", "AI Agents", "RAG", "Automation"],
-    href: "/blog/openclaw-journey",
+      "Personal AI assistant built on agent-based workflows simulating enterprise copilots. Multiagentic structure capable of interacting with external APIs, retrieving data, and executing multi-step tasks via LLM APIs and structured pipelines.",
+    tech: ["Python", "LLM APIs", "Multi-Agent", "AI Orchestration"],
+    href: "https://github.com/joedituri",
   },
 ];
 
 const principles = [
   {
-    title: "Build for momentum",
-    detail: "Small shipping loops, production-first thinking, and practical decisions that move projects forward.",
+    title: "AI-Native Builder",
+    detail: "RAG pipelines, multi-agent workflows, automation with OpenClaw and modern LLM frameworks. Real architecture built to run in production.",
   },
   {
-    title: "AI as leverage",
-    detail: "I design workflows where AI removes friction, speeds delivery, and keeps output quality high.",
+    title: "Full-Stack Capable",
+    detail: "React, Next.js, TypeScript, Node.js. I own the whole product from UI to deployment and write code that's actually maintainable.",
   },
   {
-    title: "Clarity over noise",
-    detail: "Readable code, direct communication, and systems that are easy to maintain after launch.",
+    title: "Learns by shipping",
+    detail: "CS grad who picked up Next.js, AI agent design, and automation by building real things under real constraints.",
   },
 ];
 
@@ -125,7 +125,10 @@ export default function Home() {
           <a href="#bio" className="pill-link">Bio</a>
           <a href="#work" className="pill-link">Work</a>
           <a href="#about" className="pill-link">Approach</a>
-          <Link href="/blog" className="pill-link">Blog</Link>
+          <a href="https://github.com/joedituri" target="_blank" rel="noopener noreferrer" className="pill-link inline-flex items-center gap-1">
+            <Github size={14} />
+            GitHub
+          </a>
           <Link href="/hireme" className="pill-button">Hire Me</Link>
         </nav>
       </header>
@@ -292,10 +295,6 @@ export default function Home() {
           <h2 className="section-heading">Contact</h2>
           <p className="section-title">Let&apos;s build something useful.</p>
           <div className="contact-panel">
-            <p>
-              Looking for a developer who can ship polished interfaces and keep
-              momentum high from week one.
-            </p>
             <div className="contact-actions">
               <a href="mailto:joedituri@outlook.com" className="pill-button inline-flex items-center gap-2">
                 <Mail size={15} />
